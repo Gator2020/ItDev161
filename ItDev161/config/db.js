@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import config   from 'config';
 import { error } from 'console';
 //Retrieves connection string
-const db = config.get('Authcode');
+const db = config.get('mongoURI');
 //conencts to Mongo
 const connectDatabase = async() => 
 {
