@@ -10,14 +10,18 @@ const connectDatabase = async() =>
     try
     {
         await mongoose.connect(db, {useUnifiedTopology:true});
-        console.log('connection');
+        console.log('connected to mongo DB');
     }
    
 
     catch(error)
     {
-        console.log(error.message);
+        console.log(error.message + "error unable to connect");
         process.exit(1);
     }
-    export default connectDatabase;
+   //export default connectDatabase;
 }
+;
+   export default connectDatabase;
+
+//runpls
