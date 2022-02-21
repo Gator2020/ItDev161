@@ -1,15 +1,22 @@
-import { decodeBase64 } from 'bcryptjs';
+//import { decodeBase64 } from 'bcryptjs';
 import express from 'express';
 import res from 'express/lib/response';
 import connectDatabase from './config/db.js';
 import {check, validationResult} from 'express-validator';
+import cors from 'cors';
 const app = express();
 
 connectDatabase();
 app.get('/', (req, res) => res.send('http get request to root api'));
 
 //import connectDatabase from ''
-
+//
+app.use(express.json({extended: false }));
+app.use(
+   cors({
+       origin: 'http://localhost:5000'
+   }) 
+);
 //import api from '/src/server/api/index.js/';
 //Init express app
 /**
@@ -63,4 +70,4 @@ app.get('/', (req, res) => res.send('http get request to root api'));
 
 
 
-app.listen(3000, () => console.log("listening on port 3000"));   
+app.listen(5000, () => console.log("listening on port 5000"));   
