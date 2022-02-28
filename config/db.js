@@ -19,6 +19,7 @@ const connectDatabase = async() =>
         console.log(error.message + "error unable to connect");
         process.exit(1);
     }
+    //zdz
    //export default connectDatabase;
 }
 ;
