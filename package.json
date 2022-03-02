@@ -27,6 +27,8 @@
     "esm": "^3.2.25",
     "express": "^4.17.2",
     "express-validator": "^6.14.0",
+    "jew": "^0.0.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.14"
   },
   "devDependencies": {

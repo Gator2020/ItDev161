@@ -9,7 +9,9 @@ const connectDatabase = async() =>
 {
     try
     {
-        await mongoose.connect(db, {useUnifiedTopology:true, useCreateIndex:true});
+        await mongoose.connect(db, {useUnifiedTopology:true, useCreateIndex:true,useNewUrlParser: true,
+            useFindAndModify: false,
+           });
         console.log('connected to mongo DB');
     }
    

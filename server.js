@@ -6,6 +6,8 @@ import {check, validationResult} from 'express-validator';
 import cors from 'cors';
 import bcrypt from 'bcryptjs';
 import User from './models/User';
+import jwt from 'jsonwebtoken';
+import config from 'config';
 
 const app = express();
 
@@ -64,7 +66,17 @@ user = new User({
 });
 const salt = await bcrypt.genSalt(10);
 user.password = await bcrypt.hash(password,salt);
-await user.save();
+await user.save()
+const payload = {
+    user:{
+        id: user.id}};
+        jwt.sign(payload, config.get('jwtSecret'), {expiresIn: '10hr'}, (err, token) =>{if(err) throw err; res.json({token: token});
+    }
+        );
+
+    
+    //runnpm run dev
+
 res.send('User Succesfully registered');
 
          }
