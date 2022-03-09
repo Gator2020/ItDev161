@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section style="border: 13px solid black; border-bottom:10px, 24px solid black;align-items: center; list-style-type:none; border-width:  20px;"> 
+<label> MongoDB UI webpage Login | Use this platform to access Online Database</label>
+
+<aside style ="border: 10px solid #fff; align-items: left; width: 200px solid #000; padding:2px solid black; padding-bottom:  0px, 10px 30px ; margin: 0px;">
+    <ul>
+        Please Enter credentials to Validate Mongo DB
+    </ul>
+    <label> Login Username</label> <input id="Mongo_Username" type="text" width="100px" height ="50px">
+    <label> Login Password</label><input id = "Mongo_Password" type = "password" width = "100px" height = "50px" >
+    <input onclick="DisplayPassword()" style ="width: 50px; height:20px;"type = "checkbox"<script src = "myFunction; NodeLogin"> Show Password </script>
+    <button id ="Submit_button"  onclick="connectDatabase; DisableInuts()" style =  "width: 100px; height: 70px;"> Connect </button>
+
+  </aside>
+  <nav
+  <label>Connection status:</label> <textarea id = "Connected_richtextbox" readonly="true"; style = "width:300px; height:170px; border-style:double"></textarea>  </nav>
+
+ 
+  <script class = "Disablebuttons" id = "disableInputs">
+    function DisableInuts()
+    {
+const buttondisabled = document.querySelector("Submit_button");
+buttondisabled.disabled = true;
+const readonlypass = this.document.getElementById("Mongo_Username");
+readonlypass.readonly = true;
+const readonlyUser = this.document.getElementById("Mongo_Password");
+readonlyUser.readonly = true;
+
+
+    }
+    </script>
+<script class = "myFunction" id = "Nodelogin">
+    
+    function DisplayPassword()
+    {
+
+ const showpassword = this.document.getElementById("Mongo_password");
+ showpassword.type = text;
+    if(document.getElementById("Mongo_password").type =Showpassword)
+    {
+        console.log("Password Being displayed");
+
+    }
+}
+   
+  </script>
+  <script id = "loadserver">
+
+
+import config from "config";
+
+function login()
+{
+var Authcode = config.get("MongoUri");
+
+var DbURL = "mongodb+srv://"+userName+":"+PassCode+"@cluster0.5juru.mongodb.net/myFirstDatabase?retryWrites=true&w=major"
+var userName = getElementById("Mogno_Username");
+var PassCode = getElementById("Mongo_Password");
+var script = "mongodb+srv://Gator2020:Mcraft321!@cluster0.5juru.mongodb.net/myFirstDatabase?retryWrites=true&w=major";
+}
+const connectDatabase = async() => 
+{
+    try 
+    {
+        await mongoose.connect(script, {useUnifiedTopology:true});
+        console.log('connection');
+        var connected = "Connected to database";
+        //append to textfield that the user has connected..
+        this.document.getElementById("Connected_richtextbox")+=connected;
+        this.document.getElementById("Connected_richtextbox") = "Connetion succesful";
+
+    
+
+    }
+    catch(error)
+    {
+         console.error(error.message);
+        process.exit(1);
+        connected = "Error please check credentials";
+        this.getElementById("Connected_richtextbox") = connected;
+    }
+};
+
+    export default connectDatabase;
+
+   
+  </script>
+    </section>
+</body>
+</html>
+}
