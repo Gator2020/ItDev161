@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://Gator2020:Mcraft321@cluster0.5juru.mongodb.net/myFirstDatabase?retryWrites=true&w=major"
+  "mongoURI": "mongodb+srv://Gator2020:Mcraft321!@cluster0.5juru.mongodb.net/myFirstDatabase?retryWrites=true&w=major"
 
 
 }
