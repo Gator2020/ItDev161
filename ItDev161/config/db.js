@@ -15,8 +15,10 @@ const connectDatabase = async() =>
 
     catch(error)
     {
-        console.log(error.message);
+         console.error(error.message);
         process.exit(1);
     }
+};
+
     export default connectDatabase;
-}
+

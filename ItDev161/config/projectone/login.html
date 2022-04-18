@@ -17,8 +17,7 @@
     <label> Login Username</label> <input id="Mongo_Username" type="text" width="100px" height ="50px">
     <label> Login Password</label><input id = "Mongo_Password" type = "password" width = "100px" height = "50px" >
     <input onclick="DisplayPassword()" style ="width: 50px; height:20px;"type = "checkbox"<script src = "myFunction; NodeLogin"> Show Password </script>
-    <button id ="Submit_button"  onclick="connectDatabase; DisableInuts()" style =  "width: 100px; height: 70px;"> Connect </button>
-
+    <button  type = "button"<script src = "loadserver" id ="Submit_button" text="Connect" onclick="connectDatabase()"style =  "width: 100px; height: 70px;">Connect</button>
   </aside>
   <nav
   <label>Connection status:</label> <textarea id = "Connected_richtextbox" readonly="true"; style = "width:300px; height:170px; border-style:double"></textarea>  </nav>
@@ -59,18 +58,19 @@ import config from "config";
 
 function login()
 {
-var Authcode = config.get("MongoUri");
+    connectDatabase();
+const Authcode = config.get("MongoUri");
 
 var DbURL = "mongodb+srv://"+userName+":"+PassCode+"@cluster0.5juru.mongodb.net/myFirstDatabase?retryWrites=true&w=major"
-var userName = getElementById("Mogno_Username");
-var PassCode = getElementById("Mongo_Password");
-var script = "mongodb+srv://Gator2020:Mcraft321!@cluster0.5juru.mongodb.net/myFirstDatabase?retryWrites=true&w=major";
+const userName = getElementById("Mogno_Username");
+const PassCode = getElementById("Mongo_Password");
+const script = "mongodb+srv://Gator2020:Mcraft321!@cluster0.5juru.mongodb.net/myFirstDatabase?retryWrites=true&w=major";
 }
 const connectDatabase = async() => 
 {
     try 
     {
-        await mongoose.connect(script, {useUnifiedTopology:true});
+        await mongoose.connect(DbURL, {useUnifiedTopology:true});
         console.log('connection');
         var connected = "Connected to database";
         //append to textfield that the user has connected..
